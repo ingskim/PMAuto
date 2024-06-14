@@ -1,510 +1,238 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <META http-equiv="Expires" content="-1">
-    <META http-equiv="Pragma" content="no-cache">
-    <META http-equiv="Cache-Control" content="no-cache">
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="author" content="CHEIL worldwide">
-    <meta name="Keywords" content="CHEIL worldwide, SRP">
-    <meta name="description" content="CHEIL worldwide, SRP">
-    <title>CHEIL Worldwide Partner Portal</title>
-    <!-- cmm lib -->
-    <script type="text/javascript" src="path/to/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="path/to/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="path/to/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="path/to/jquery.layout-latest.js"></script>
-    <script type="text/javascript" src="path/to/jquery.mtz.monthpicker.js"></script>
-    <script type="text/javascript" src="path/to/jquery.selectric.js"></script>
-    <script type="text/javascript" src="path/to/jquery.sticky.js"></script>
-    <script type="text/javascript" src="path/to/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script type="text/javascript" src="path/to/jquery.meio.mask.js" charset="utf-8"></script>
-    <script type="text/javascript" src="path/to/autoNumeric-1.7.5.js"></script>
-    <script type="text/javascript" src="path/to/jquery.filedownload.js"></script>
-    <script type="text/javascript" src="path/to/highlight-4.js"></script>
-    <!-- ext lib -->
-    <script type="text/javascript" src="path/to/json.js"></script>
-    <script type="text/javascript" src="path/to/ibleaders.js"></script>
-    <script type="text/javascript" src="path/to/ibsheet.js"></script>
-    <script type="text/javascript" src="path/to/ibsheetinfo.js"></script>
-    <!-- int lib -->
-    <script type="text/javascript">
-        // JavaScript initialization and function definitions
-    </script>
-    <!-- cww lib -->
-    <script type="text/javascript" src="path/to/cmmCommon.js"></script>
-    <script type="text/javascript" src="path/to/session.js"></script>
-    <script type="text/javascript" src="path/to/multilanguage_manager.js"></script>
-    <script type="text/javascript" src="path/to/ibsheet_extend.js"></script>
-    <script type="text/javascript" src="path/to/form_validation.js"></script>
-    <script type="text/javascript" src="path/to/calendar.js"></script>
-    <script type="text/javascript" src="path/to/global.js"></script>
-    <script type="text/javascript" src="path/to/code.js"></script>
-    <script type="text/javascript" src="path/to/sessionkeeper.js"></script>
-    <script type="text/javascript" src="path/to/gnb.js"></script>
-    <!-- srp lib -->
-    <script type="text/javascript" src="path/to/common.js"></script>
-    <script type="text/javascript" src="path/to/srp_mdg_util.js"></script>
-    <script type="text/javascript" src="path/to/srp_common.js?ver=20230728"></script>
-    <!-- int css -->
-    <link rel="stylesheet" type="text/css" href="path/to/style.css"/>
-    <link rel="stylesheet" type="text/css" href="path/to/jquery-ui.css"/>
-    <link rel="stylesheet" type="text/css" href="path/to/jquery.mCustomScrollbar.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>견적등록/수정</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .section {
+            background-color: #fff;
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            background-color: #f2f2f2;
+            padding: 10px;
+            border-left: 5px solid green;
+            font-size: 1.2em;
+        }
+        .subsection-title {
+            font-weight: bold;
+            background-color: #f2f2f2;
+            padding: 5px;
+            border-left: 5px solid green;
+            font-size: 1.1em;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .subsection-title img {
+            margin-right: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .blue-background {
+            background-color: #e6f3ff;
+        }
+        .checkbox-cell {
+            text-align: center;
+            width: 40px;
+        }
+        .controls {
+            text-align: right;
+            margin-bottom: 10px;
+        }
+        .controls label {
+            margin-right: 20px;
+        }
+    </style>
 </head>
-<body id="popContent">
-    <div id="pop-wrap">
-        <script src="path/to/file_component.js"></script>
-        <script>
-            var initPage;
-            var extentionStr = "*.alz;*.avi;*.bmp;*.doc;*.dot;*.dotx;*.docx;*.dwf;*.dwg;*.dxf;*.eml;*.gif;*.gul;*.htm; *.html;*.hwp;*.jpg;*.mht;*.mov;*.mp3;*.mpeg; *.mpg; *.mpe;*.pcl;*.pdf;*.ppt;*.pptx;*.rtf;*.tif;*.tiff;*.txt;*.wav;*.xls;*.xlsx;*.xml;*.zip";
+<body>
 
-            var uploader = null;
-            var outpUploader = null;
-            var downloader = new CommonMultiUploader("downloader", {type:"D", load:function(){
-            }, downloadAllButton : false});
-
-            MsgManager.addMsgCdBeforeOnload("WRN00113, INF00174, ERR00114, WRN02107, WRN02115, WRN02700, INF02956");
-            var selectFull = new NormalServiceCaller("SRPR0071");
-            var processSheet = new NormalServiceCaller("SRPP0042");
-            var codeManager = new GfnCodeManager();
-            var crncyCdStore = codeManager.addComCode({groupCd:"CRNCY"});
-
-            $(function(){
-                $("body").fixBottomScroll();
-                initParm();
-                var uTp = $("#cls").val() == "D" ? "D" : "U";
-                uploader = new CommonMultiUploader("uploader", {type:uTp, extention: extentionStr,  maxAmt : 20, maxTotalSize : 1024*1024*50, load:function(){
-                }, downloadAllButton : false});
-                outpUploader = new CommonMultiUploader("outpUploader", {type:uTp, extention: extentionStr, maxTotalSize : 1024*1024*20, load:function(){
-                }, downloadAllButton : false});
-                
-                uploader.init();
-                outpUploader.init();
-                downloader.init();
-
-                selectFull.searchFormData("paramForm");
-                selectFull.outputFormData("mainForm", "jobInfoDVO");
-                selectFull.outputFormData("prpslEstForm", "prpslEstDVO");
-                
-                processSheet.searchFormData("paramForm");
-                processSheet.searchFormData("mainForm");
-                processSheet.inputFormData("mainForm","jobInfoDVO");
-                processSheet.inputFormData("prpslEstForm","prpslEstDVO");
-
-                initPage = function(){
-                    selectFull.searchSvc(function(rData){
-                        if(!gfn_isEmpty($("#attachFileId").val())){
-                            uploader.selectData($("#attachFileId").val());
-                        }
-                        if(!gfn_isEmpty($("#outpAttachFileId").val())){
-                            outpUploader.selectData($("#outpAttachFileId").val());
-                        }
-                        
-                        if("I" == $("#cls").val()){
-                            if(!gfn_isEmpty($("#askStdFileId").val())){
-                                downloader.selectData($("#askStdFileId").val());
-                            }
-                        } else {
-                            if(!gfn_isEmpty($("#stdFileId").val())){
-                                downloader.selectData($("#stdFileId").val());
-                            }
-                        }
-
-                        if(!gfn_isEmpty(rData.jobInfoDVO)){
-                            var jobInfo = rData.jobInfoDVO;
-                            var $tds = $("#mainForm table td");
-                            $tds.eq(0).text(jobInfo.jobNm);
-                            $tds.eq(1).text(jobInfo.matNm);
-                            $tds.eq(2).text(jobInfo.cltNm);
-                            $tds.eq(3).text(jobInfo.adjMainEmpNm);
-                            $tds.eq(4).text(jobInfo.pdnDptNm);
-                            $tds.eq(5).text(jobInfo.pdnMainEmpNm);
-                        }
-                        
-                        if(gfn_isEmpty(rData.prpslEstDVO.estAmt1)){
-                            $("#crncyCd1").val("KRW");
-                        }
-
-                        $("#estAmt1").setCurrFormatter($("#crncyCd1").val());
-
-                        if(!gfn_isEmpty(rData.prpslEstDVO.estDcdAmt1)){
-                            $("#estDcdAmt1").setCurrFormatter($("#crncyCd1").val());
-                            $("#crncyCd2").val($("#crncyCd1").val());
-                        }
-                        $("#crncyCd2").prop("disabled", true ).selectric("refresh");
-                    });
-                };
-
-                codeManager.publishCode(function(){
-                    crncyCdStore.populateSelect($("[name='crncyCd1']"),{display:"CN", addFirst: GfnCode.optionChs("")}).val("KRW");
-                    crncyCdStore.populateSelect($("[name='crncyCd2']"),{display:"CN", addFirst: GfnCode.optionSpc("")}).val("");
-                    initPage();
-                });
-
-                $("#crncyCd1").change(function(e){
-                    $("#estAmt1").setCurrFormatter($("#crncyCd1").val());
-                });
-
-                $("#btnTempSave").click(function(){
-                    fn_srpBlockPage();
-                    $("#saveCls").val("T");
-                    if(fn_valid()){
-                        if(confirm(MsgManager.getMsg("WRN00113"))){
-                            var extentdParam = {};
-                            uploader.startUpload(function(){
-                                extentdParam.attachInfo = uploader.getSaveData();
-                                outpUploader.startUpload(function(){
-                                    extentdParam.outpAttachInfo = outpUploader.getSaveData();
-
-                                    if("I" == $("#cls").val()){
-                                        extentdParam.stdFileId = $("#askStdFileId").val();
-                                    }
-
-                                    processSheet.processSvc(function(data){
-                                        $("#estNo").val(data.estNo);
-                                        outpUploader.selectData(data.outpAttachInfo.attachFileMt.attachFileId, function(){
-                                            uploader.selectData(data.attachInfo.attachFileMt.attachFileId, function(){
-                                                selectFull.searchSvc(function(data){
-                                                    if(typeof opener.reload != "undefined"){
-                                                        opener.reload();
-                                                    }
-                                                    if(typeof opener.srpCoopPrgStat != "undefined"){
-                                                        opener.srpCoopPrgStat.LoadSearchData();
-                                                    }
-                                                });
-                                                fn_srpUnblickPage();
-                                                Msgbar.showSaveOK();
-                                            });
-                                        });
-                                    }, extentdParam);
-                                });
-                            });
-                        } else {
-                            fn_srpUnblickPage();
-                        }
-                    } else {
-                        fn_srpUnblickPage();
-                    }
-                });
-
-                $("#btnSave").click(function(data){
-                    fn_srpBlockPage();
-                    $("#saveCls").val("S");
-                    if(fn_valid()){
-                        if(confirm(MsgManager.getMsg("INF00174"))){
-                            var extentdParam = {};
-                            uploader.startUpload(function(){
-                                extentdParam.attachInfo = uploader.getSaveData();
-                                if(uploader.getFileList().length >= 1 && !fn_fileValid(extentdParam.attachInfo, "견적")){
-                                    fn_srpUnblickPage();
-                                    return false;
-                                }
-                                outpUploader.startUpload(function(){
-                                    extentdParam.outpAttachInfo = outpUploader.getSaveData();
-                                    if(outpUploader.getFileList().length >= 1 && !fn_fileValid(extentdParam.outpAttachInfo, "산출물")){
-                                        fn_srpUnblickPage();
-                                        return false;
-                                    }
-                                    processSheet.processSvc(function(){
-                                        if(typeof opener.selectSheet != "undefined"){
-                                            opener.selectSheet.searchSvc(function(){                                                                                                                                                                   
-                                                Msgbar.showSaveOK();
-                                            });
-                                        }
-                                        if(typeof opener.srpCoopPrgStat != "undefined"){
-                                            opener.srpCoopPrgStat.LoadSearchData();
-                                        }
-                                        window.close();
-                                    }, extentdParam);
-                                });
-                            });
-                        } else {
-                            fn_srpUnblickPage();
-                        }
-                    } else {
-                        fn_srpUnblickPage();
-                    }
-                });
-
-                $("#btnClose").click(function(){
-                    if(typeof opener.selectSheet != "undefined"){
-                        opener.selectSheet.searchSvc(function(){                                                                                                                                                                   
-                            Msgbar.showSaveOK();
-                        });
-                    }
-                    if(typeof opener.srpCoopPrgStat != "undefined"){
-                        opener.srpCoopPrgStat.LoadSearchData();
-                    }
-                    window.close();
-                });
-
-                if(!(gfn_isEmpty(opener.rowData.estPrgStatCd) || opener.rowData.estPrgStatCd == "01" || opener.rowData.estPrgStatCd == "03")){
-                    $("#btnTempSave, #btnSave").prop("disabled", true).addClass("btn-disable");
-                    $("#estAmt1").prop("readonly", true).addClass("txt-ready");
-                    $("#crncyCd1").prop("disabled", true ).selectric("refresh");
-                    $("#btnTempSave, #btnSave").off();
-                }
-            });
-
-            GFN_PAGE_ENV.setError(function(errMsg, errType, ex){
-                fn_srpUnblickPage();
-                if(errType == "existSbmt"){
-                    alert(errMsg);
-                    if(typeof opener.selectSheet != "undefined"){
-                        opener.selectSheet.searchSvc(function(){                                                                                                                                                                   
-                            Msgbar.showSaveOK();
-                        });
-                    }
-                    if(typeof opener.srpCoopPrgStat != "undefined"){
-                        opener.srpCoopPrgStat.LoadSearchData();
-                    }
-                    window.close();
-                } else {
-                    alert(errMsg);
-                }
-            });
-
-            function initParm(){
-                $("#jobNo").val(opener.rowData.jobNo);
-                $("#jobTpCd2").val(opener.rowData.jobTpCd2);
-                $("#estAskDt").val(opener.rowData.estAskDt);
-                $("#estOrdNo").val(opener.rowData.estOrdNo);
-                $("#estNo").val(opener.rowData.estNo);
-                $("#attachFileId").val(opener.rowData.attachFileId);
-                $("#cls").val(opener.cls);
-                
-                var estBusnScCd = " ";
-                if("ATL" == opener.rowData.estBusnScCd) estBusnScCd = "01";
-                else if("BTL" == opener.rowData.estBusnScCd) estBusnScCd = "02";
-                $("#estBusnScCd").val(estBusnScCd);
-            }
-
-            function fn_valid(){
-                var estAmt1 = $("#estAmt1").val().ex_replaceAll(",","").ex_replaceAll(".","");
-                if(null == estAmt1 || gfn_isEmpty(estAmt1)){
-                    alert(MsgManager.getMsg("ERR00114"));
-                    return false;
-                }
-                if(estAmt1 == 0){
-                    alert(MsgManager.getMsg("WRN02115"));
-                    return false;
-                }
-
-                if($("#saveCls").val() == "S"){
-                    if(!uploader.hasUploadFile() && uploader.getFileList().length == 0){	 	
-                        MsgManager.alertMsg("INF00702");
-                        return false;
-                    }
-
-                    if(!outpUploader.hasUploadFile() && outpUploader.getFileList().length == 0){	 	
-                        MsgManager.alertMsg("INF61237");
-                        return false;
-                    }
-                }
-                if(!gfn_isEmpty($("#crncyCd1").val())){
-                    if(estAmt1 <= 0){
-                        MsgManager.alertMsg("INF01541");
-                        $("#estAmt1").focus();
-                        return false;
-                    } else if(estAmt1 > 10000000000000){
-                        alert(MsgManager.getMsg("WRN02702"));
-                        $("#estAmt1").focus();
-                        $("#estAmt1").val(0);
-                        return false;
-                    }
-                }
-                return true;
-            }
-
-            function fn_fileValid(attachInfo, type){
-                var cnt = attachInfo.listAttachFileDt.length;
-                for(var i = 0; i < attachInfo.listAttachFileDt.length; i++){
-                    var status = attachInfo.listAttachFileDt[i].rowStatus;
-                    if(status == "D"){
-                        cnt--;
-                    }
-                }
-                if(cnt <= 0){
-                    if(type == "견적"){
-                        MsgManager.alertMsg("INF00702");
-                        return false;
-                    } else{
-                        MsgManager.alertMsg("INF61237");
-                        return false;
-                    }
-                }
-                return true;
-            }
-        </script>
-        <h1 class="title">사전견적등록/수정</h1>
-        <div class="s-tit-area clearfix">
-            <h4 class="s-title"><span cd="jobInfoNm">Job 정보</span></h4>
-        </div>
-        <form name="paramForm" id="paramForm">
-            <input type="hidden" name="jobNo" id="jobNo"/>
-            <input type="hidden" name="jobTpCd1" id="jobTpCd1"/>
-            <input type="hidden" name="jobTpCd2" id="jobTpCd2"/>
-            <input type="hidden" name="estAskDt" id="estAskDt"/>
-            <input type="hidden" name="estOrdNo" id="estOrdNo"/>
-            <input type="hidden" name="estNo" id="estNo"/>
-            <input type="hidden" name="attachFileId" id="attachFileId"/>
-            <input type="hidden" name="estBusnScCd" id="estBusnScCd"/>
-            <input type="hidden" name="saveCls" id="saveCls"/>
-            <input type="hidden" name="excelCls" id="excelCls" value="N"/>
-            <input type="hidden" name="cls" id="cls" value=""/>
-        </form>
-        <form name="mainForm" id="mainForm">
-            <input type="hidden" name="jobNm" id="jobNm"/>
-            <input type="hidden" name="matNm" id="matNm"/>
-            <input type="hidden" name="cltNm" id="cltNm"/>
-            <table class="tbl-type03">
-                <colgroup>
-                    <col style="width:13.8%;">
-                    <col style="width:19.53%;">
-                    <col style="width:13.8%;">
-                    <col style="width:19.53%;">
-                    <col style="width:13.8%;">
-                    <col>
-                </colgroup>
-                <tbody>
-                    <tr>
-                        <th scope="row"><span cd="job">Job</span></th>
-                        <td></td>
-                        <th scope="row"><span cd="matNm">Job Type</span></th>
-                        <td></td>
-                        <th scope="row"><span cd="clt">광고주</span></th>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><span cd="adjMainEmpNm">정산담당자</span></th>
-                        <td></td>
-                        <th scope="row"><span cd="pdnTeam">제작팀</span></th>
-                        <td></td>
-                        <th scope="row"><span cd="pdnMainr">제작담당자</span></th>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-        <div class="s-tit-area clearfix">
-            <h4 class="s-title"><span cd="prpslEstInfo">사전견적정보</span></h4>
-        </div>
-        <form id="prpslEstForm" name="prpslEstForm">
-            <input type="hidden" id="saveCls" name="saveCls"/>
-            <input type="hidden" id="estOrdNo" name="estOrdNo"/>
-            <input type="hidden" id="estAskDt" name="estAskDt"/>
-            <input type="hidden" id="estNo" name="estNo"/>
-            <input type="hidden" id="attachFileId" name="attachFileId"/>
-            <input type="hidden" id="outpAttachFileId" name="outpAttachFileId"/>
-            <input type="hidden" id="attachFileSize" name="attachFileSize"/>
-            <input type="hidden" id="stdFileId" name="stdFileId" title="견적서 첨부파일"/>
-            <input type="hidden" id="askStdFileId" name="askStdFileId" title="견적의뢰 첨부파일"/>
-            <table class="tbl-type03">
-                <colgroup>
-                    <col style="width:13.8%;">
-                    <col>
-                </colgroup>
-                <tbody>
-                    <tr>
-                        <th scope="row"><span cd="estNo">견적번호</span></th>
-                        <td>
-                            <div class="input-area">
-                                <div class="col-100"><input type="text" class="txt-ready" id="estNo" name="estNo" readonly="readonly"></div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="tbl-type02 mgT20">
-                <table>
-                    <colgroup>
-                        <col style="width:16.66%;">
-                        <col style="width:16.66%;">
-                        <col style="width:16.66%;">
-                        <col style="width:16.66%;">
-                        <col style="width:16.66%;">
-                        <col>
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th scope="col" colspan="3" class="bb-c"><span cd="prpslEst">사전견적</span></th>
-                            <th scope="col" colspan="3" class="bb-c"><span cd="prpslEstDcd">사전견적확정</span></th>
-                        </tr>
-                        <tr>
-                            <th scope="col"><span cd="estAmt">견적금액</span></th>
-                            <th scope="col"><span cd="curr">통화</span></th>
-                            <th scope="col"><span cd="estSbmtDt">제출일자</span></th>
-                            <th scope="col"><span cd="estDcdAmt">확정금액</span></th>
-                            <th scope="col"><span cd="curr">통화</span></th>
-                            <th scope="col"><span cd="confirmDate">확정일자</span></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="input-area">
-                                    <div class="col-100">
-                                        <input type="text" class="ar" id="estAmt1" name="estAmt1" format="decimal" valid="required">
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-area">
-                                    <div class="col-100">
-                                        <select id="crncyCd1" name="crncyCd1" valid="required" class="basic"></select>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-area">
-                                    <div class="col-100"><input type="text" id="estSbmtDt" name="estSbmtDt" format="date" class="txt-ready" readonly="readonly"></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-area">
-                                    <div class="col-100"><input type="text" id="estDcdAmt1" name="estDcdAmt1" format="decimal" class="txt-ready" readonly="readonly"></div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-area">
-                                    <div class="col-100">
-                                        <select id="crncyCd2" name="crncyCd2" class="basic"></select>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-area">
-                                    <div class="col-100"><input type="text" id="enpTrnsDt" name="enpTrnsDt" format="date" class="txt-ready" readonly="readonly"></div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </form>
-        <div class="col2">
-            <div class="pdL0 lh1">
-                <h4 class="s-title mgT0"><span cd="attachFileDown">전달 산출물내역서 확인</span></h4>
-                <div id="downloader">첨부파일 영역</div>
-            </div>
-        </div>
-        <div class="col2">
-            <div class="pdR15 lh1">
-                <h4 class="s-title mgT0"><span cd="attachEstPaper">견적서 첨부</span></h4>
-                <div id="uploader">첨부파일 영역</div>
-            </div>
-            <div class="pdL0 lh1">
-                <h4 class="s-title mgT0"><span cd="estAttachFile2">산출물내역서 첨부</span></h4>
-                <div id="outpUploader">첨부파일 영역</div>
-            </div>
-        </div>
-        <div class="btn-area btm-btn fix-scroll">
-            <button type="button" class="btn-type05" id="btnTempSave"><span cd="save">저장</span></button>
-            <button type="button" class="btn-type05 ty01" id="btnSave"><span cd="estSbmt">견적제출</span></button>
-        </div>
-        <a href="javascript:void(0);" class="btn-close-popup" id="btnClose">닫기</a>
+    <h1>견적등록/수정</h1>
+    
+    <div class="section">
+        <div class="section-title">Job 정보</div>
+        <table>
+            <tr>
+                <td class="blue-background">Job</td>
+                <td>KRP24999001 -2024 PM업무자동화 T/F 캠페인</td>
+                <td class="blue-background">Job Type</td>
+                <td>Audio & Video/ AV Production Others</td>
+                <td class="blue-background">광고주</td>
+                <td>제일기획</td>
+            </tr>
+            <tr>
+                <td class="blue-background">담당PM</td>
+                <td>고병택</td>
+                <td class="blue-background">제작팀</td>
+                <td>PM 혁신팀</td>
+                <td class="blue-background">제작담당자</td>
+                <td>정은이</td>
+            </tr>
+        </table>
     </div>
+    
+    <div class="section">
+        <div class="section-title">견적의뢰정보</div>
+        <table>
+            <tr>
+                <td class="blue-background">견적의뢰번호</td>
+                <td>KRFO2403046</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="section">
+        <div class="section-title">견적 등록부문</div>
+        
+        <div class="subsection-title">
+            <img src="/mnt/data/plus.jpg" alt="+" width="20" height="20">
+            CF프로덕션
+        </div>
+        <div class="controls">
+            <label><input type="checkbox"> 전체선택</label>
+            <label><input type="checkbox"> 삭제</label>
+            <label><input type="checkbox"> 복사</label>
+            <label><input type="checkbox"> 추가</label>
+        </div>
+        <table>
+            <tr>
+                <th class="checkbox-cell"><input type="checkbox"></th>
+                <th>구분</th>
+                <th>항목</th>
+                <th>수량1</th>
+                <th>단위1</th>
+                <th>수량2</th>
+                <th>단위2</th>
+                <th>거래가격</th>
+                <th>비고</th>
+                <th>해당 산출물</th>
+            </tr>
+            <tr>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td>1. 기획</td>
+                <td>기획구성료</td>
+                <td>1</td>
+                <td>프로젝트</td>
+                <td></td>
+                <td></td>
+                <td>₩5,000,000</td>
+                <td></td>
+                <td>영상 기획안</td>
+            </tr>
+            <tr>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td>2. 프로듀싱</td>
+                <td>E.PD료</td>
+                <td>1</td>
+                <td>편</td>
+                <td>2</td>
+                <td>일</td>
+                <td>₩8,000,000</td>
+                <td></td>
+                <td>영상 소재파일 등</td>
+            </tr>
+            <tr>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td>2. 프로듀싱</td>
+                <td>L.PD료</td>
+                <td>1</td>
+                <td>편</td>
+                <td>2</td>
+                <td>일</td>
+                <td>₩3,000,000</td>
+                <td></td>
+                <td>영상 소재파일 등</td>
+            </tr>
+        </table>
+
+        <div class="subsection-title">
+            <img src="/mnt/data/plus.jpg" alt="+" width="20" height="20">
+            포스트프로덕션
+        </div>
+        <div class="controls">
+            <label><input type="checkbox"> 전체선택</label>
+            <label><input type="checkbox"> 삭제</label>
+            <label><input type="checkbox"> 복사</label>
+            <label><input type="checkbox"> 추가</label>
+        </div>
+        <table>
+            <tr>
+                <th class="checkbox-cell"><input type="checkbox"></th>
+                <th>구분</th>
+                <th>항목</th>
+                <th>수량1</th>
+                <th>단위1</th>
+                <th>수량2</th>
+                <th>단위2</th>
+                <th>거래가격</th>
+                <th>비고</th>
+                <th>해당 산출물</th>
+            </tr>
+            <tr>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td>1. 편집</td>
+                <td>Editing</td>
+                <td>1</td>
+                <td>편</td>
+                <td>15, 30</td>
+                <td>초</td>
+                <td>₩5,500,000</td>
+                <td></td>
+                <td>편집본</td>
+            </tr>
+            <tr>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td>2. 합성</td>
+                <td>2D</td>
+                <td>4</td>
+                <td>Time</td>
+                <td>15, 30</td>
+                <td>초</td>
+                <td>₩20,000,000</td>
+                <td>본편, 수정 등 포함</td>
+                <td>영상 데이터</td>
+            </tr>
+            <tr>
+                <td class="checkbox-cell"><input type="checkbox"></td>
+                <td>2. 합성</td>
+                <td>3D</td>
+                <td>4</td>
+                <td>Time</td>
+                <td>15, 30</td>
+                <td>초</td>
+                <td>₩20,000,000</td>
+                <td>모델링 등</td>
+                <td>영상 데이터</td>
+            </tr>
+        </table>
+    </div>
+
 </body>
 </html>
