@@ -1,0 +1,611 @@
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" >
+<META http-equiv="Expires" content="-1">
+<META http-equiv="Pragma" content="no-cache">
+<META http-equiv="Cache-Control" content="no-cache">
+<meta name="format-detection" content="telephone=no"/>
+
+	
+	
+	
+		<meta name="author" content="CHEIL worldwide">
+		<meta name="Keywords" content="CHEIL worldwide, SRP">
+		<meta name="description" content="CHEIL worldwide, SRP">
+		<title>CHEIL Worldwide Partner Portal</title>
+	
+
+
+
+<!-- cmm lib -->
+<script type="text/javascript" src="/com/jquery/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/com/jquery/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/com/jquery/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/com/jquery/jquery.layout-latest.js"></script>
+<script type="text/javascript" src="/com/jquery/jquery.mtz.monthpicker.js"></script>
+<script type="text/javascript" src="/com/jquery/jquery.selectric.js"></script>
+<script type="text/javascript" src="/com/jquery/jquery.sticky.js"></script>
+<script type="text/javascript" src="/com/jquery/jquery.mCustomScrollbar.concat.min.js"></script>
+<script type="text/javascript" src="/com/jquery/jquery.meio.mask.js" charset="utf-8"></script>
+<script type="text/javascript" src="/com/jquery/autoNumeric-1.7.5.js"></script>
+<script type="text/javascript" src="/com/jquery/jquery.filedownload.js"></script>
+<script type="text/javascript" src="/com/jquery/highlight-4.js"></script>
+
+<!-- ext lib -->
+<script type="text/javascript" src="/com/json/json.js"></script>
+<script type="text/javascript" src="/com/ibsheet/sheet/ibleaders.js"></script>
+<script type="text/javascript" src="/com/ibsheet/sheet/ibsheet.js"></script>
+<script type="text/javascript" src="/com/ibsheet/sheet/ibsheetinfo.js"></script>
+
+<!-- int lib -->
+<script type="text/javascript">
+	var GFN_SESSION_LIST = "W3siX1BVQkxJQ19FWFBPTkVOVCI6IjEwMDAxIiwibG9naW5UeXBlIjoiU1JQIiwiZW1wTm0iOiLtmanrtInssKwiLCJzZXNzaW9uSWQiOiJjZWNhZmE0Ny0xM2UwLTRlZTYtODE0NC04ZDdkNGM5YzQ5NzUiLCJfUFVCTElDX01PRFVMVVMiOiI4ZjUxNWFhNDE5YTIwMDg2MWY5YTFjNjI0MWY3M2MwY2I3OWY5YzRhMGM1YmVmY2RlOTMzZDVkYmNlNjg0MDA3ZjljYTUzYzQ3MTg1OTY2NjYyZjU2ZDdiMmYwYTcyOGI0NjYxYWY1ZjI2NWQwMjA1ZjFiYzRjOTc1MDYzNmFiNTJkOTk5YTMzMGMxNzRjNTZkMjQ1ZTMzZGVjNmU1NGU3OTcwYmM0ZGY5YTg2ZTlmYTFiNzdmZjQ3OGZkYTI1NTBkYTU3ZDAyMmY3ZTE4NDczZTliMTJmNTEzYTcwYmU5MTkwYTliY2RiZGIxOGFiMzBjNjRlM2FlMTQzMjc1NDc4ZjZlNGE2N2Y5NDkyNGQ4NDkwNTAxOGIyMDVhNjMxYzIyZmI3ZDhhNzU0ZjNjMjU5Nzk3Nzk0YjZkNTZkODE3ODQzMDc5YjBlMjBlYTk5NGE0NTgwMGQ4ZjcyMzI0MzViNGM4NGU2NzMyYzdiYmJjMDJhOGQwZjhmN2FkODUxZjY1ZjI0NmFjNGIyOTdiYTI4YjRhYWZiNjVkMDIxMDIzOTI3MjNhZWQ3YmFmNTc2MWZlNjQzNWFmMmIxMjE1MzYzNTM1NDJhMmQzOGUwODRmOTBhNzcyMmZlODgwNDQ3OTU1YTg2ZTY0NDA5Yzc5YTQzMjM4MWVhMWZmNTM1YTc1MSIsImZyZ25ZbiI6Ik4iLCJiYXJlYUNkIjoiWUFCMCIsImNvbXBDZCI6IlkxQjAiLCJzdGNPYmpBcHBsWW4iOiJZIiwidXNlckVtcG5vIjoiNDAwMzAwMTYiLCJsb2dpbklwIjoiMTIxLjE2Mi4xMDUuNjYiLCJ2bmRySWQiOiI0MDAzMDAxNiIsInZuZHJUcCI6IkVNUCIsInZuZHJObSI6Iuq+uOyaseq+uOyasSIsInZuZHJDZCI6IkEwMDE1MzcwIiwibG9naW5TY0NkIjoiMDYifV0=";
+	var GFN_CONTEXT_INFO = {"pageId":"SRP_6040_P01","svcChYn":"N","programId":"SRP_6040","hasManual":false,"attachUploadUrl":"http://gate3.cheil.com/srp/","reportServerDomain":"https://partner.cheil.com/rpt/","todayForBarea":"20240614","manualViewUrl":null};
+	var GFN_PAGE_TITLE = "사전견적등록/수정";
+	var GFN_PARAM_INFO = {};
+	var SRP_PARAM_INFO = {};
+	var SITE = "SRP";
+</script>
+
+<!-- cww lib -->
+<script type="text/javascript" src="/codebase/cmm/js/cmmCommon.js"></script>
+<script type="text/javascript" src="/codebase/cmm/js/session.js"></script>
+<script type="text/javascript" src="/codebase/cmm/js/multilanguage_manager.js"></script>
+<script type="text/javascript" src="/codebase/cmm/js/ibsheet_extend.js"></script>
+<script type="text/javascript" src="/codebase/cmm/js/form_validation.js"></script>
+<script type="text/javascript" src="/codebase/cmm/js/calendar.js"></script>
+<script type="text/javascript" src="/codebase/cmm/js/global.js"></script>
+<script type="text/javascript" src="/codebase/cmm/js/code.js"></script>
+
+<script type="text/javascript" src="/codebase/cmm/js/sessionkeeper.js"></script>
+<script type="text/javascript" src="/codebase/cmm/js/gnb.js"></script>
+
+<!-- srp lib -->
+<script type="text/javascript" src="/codebase/srp/js/common.js"></script>
+<script type="text/javascript" src="/codebase/srp/js/srp_mdg_util.js"></script>
+<script type="text/javascript" src="/codebase/srp/js/srp_common.js?ver=20230728"></script>
+ 
+<!-- int css -->
+<link rel="stylesheet" type="text/css" href="/codebase/srp/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/codebase/cmm/css/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="/codebase/cmm/css/jquery.mCustomScrollbar.css" />
+
+</head>
+<body id="popContent">
+	<div id="pop-wrap">
+		
+
+<script src="/codebase/cmm/js/file_component.js"></script>
+<script>
+var initPage;	//화면초기함수
+var extentionStr = "*.alz;*.avi;*.bmp;*.doc;*.dot;*.dotx;*.docx;*.dwf;*.dwg;*.dxf;*.eml;*.gif;*.gul;*.htm; *.html;*.hwp;*.jpg;*.mht;*.mov;*.mp3;*.mpeg; *.mpg; *.mpe;*.pcl;*.pdf;*.ppt;*.pptx;*.rtf;*.tif;*.tiff;*.txt;*.wav;*.xls;*.xlsx;*.xml;*.zip";		//첨부파일 extention
+
+//업로드 모듈
+var uploader = null;
+var outpUploader = null;
+
+//다운로드 모듈
+var downloader = new CommonMultiUploader("downloader", {type:"D", load:function(){
+}, downloadAllButton : false});
+
+//메시지를 미리 읽어들여, 추후 메시지를 get 해올시 부하를 줄여준다.
+MsgManager.addMsgCdBeforeOnload("WRN00113, INF00174, ERR00114, WRN02107, WRN02115, WRN02700, INF02956");
+
+//제안견적등록호출 
+var selectFull = new NormalServiceCaller("SRPR0071");
+
+//제안견적등록
+var processSheet = new NormalServiceCaller("SRPP0042");
+
+var codeManager = new GfnCodeManager();
+var crncyCdStore = codeManager.addComCode({groupCd:"CRNCY"});	
+
+$(function(){
+	//팝업 하단 버튼 고정
+	$("body").fixBottomScroll();
+	
+	// 변수값 초기화
+	initParm();
+	// 업로드 모듈 초기화
+	var uTp = $("#cls").val() == "D" ? "D" : "U";
+	uploader = new CommonMultiUploader("uploader", {type:uTp, extention: extentionStr,  maxAmt : 20, maxTotalSize : 1024*1024*50, load:function(){
+	}, downloadAllButton : false});
+	outpUploader = new CommonMultiUploader("outpUploader", {type:uTp, extention: extentionStr, maxTotalSize : 1024*1024*20, load:function(){
+	}, downloadAllButton : false});
+	
+	uploader.init();
+	outpUploader.init();
+	downloader.init();
+	// 업로드 모듈 초기화 end
+
+	selectFull.searchFormData("paramForm");
+	selectFull.outputFormData("mainForm", "jobInfoDVO" );
+	selectFull.outputFormData("prpslEstForm", "prpslEstDVO" );
+	
+	processSheet.searchFormData("paramForm");
+	processSheet.searchFormData("mainForm");
+	processSheet.inputFormData("mainForm","jobInfoDVO");
+	processSheet.inputFormData("prpslEstForm","prpslEstDVO");
+
+	//화면초기조회    
+	initPage = function(){
+
+		selectFull.searchSvc(function(rData){
+			
+			if(!gfn_isEmpty($("#attachFileId").val())){
+				uploader.selectData($("#attachFileId").val());
+			}
+			if(!gfn_isEmpty($("#outpAttachFileId").val())){
+				outpUploader.selectData($("#outpAttachFileId").val());
+			}
+			
+			if("I" == $("#cls").val()){
+				if(!gfn_isEmpty($("#askStdFileId").val())){
+					downloader.selectData($("#askStdFileId").val());
+				}
+			} else {
+				if(!gfn_isEmpty($("#stdFileId").val())){
+					downloader.selectData($("#stdFileId").val());
+				}
+			}
+			
+			//view Job 정보
+			if(!gfn_isEmpty(rData.jobInfoDVO)){
+				var jobInfo = rData.jobInfoDVO;
+				var $tds = $("#mainForm table td");
+				$tds.eq(0).text(jobInfo.jobNm);
+				$tds.eq(1).text(jobInfo.matNm);
+				$tds.eq(2).text(jobInfo.cltNm);
+				$tds.eq(3).text(jobInfo.adjMainEmpNm);
+				$tds.eq(4).text(jobInfo.pdnDptNm);
+				$tds.eq(5).text(jobInfo.pdnMainEmpNm);
+			}
+			
+			if(gfn_isEmpty(rData.prpslEstDVO.estAmt1)){
+				$("#crncyCd1").val("KRW");
+			}
+			
+			$("#estAmt1").setCurrFormatter($("#crncyCd1").val());
+			
+			if(!gfn_isEmpty(rData.prpslEstDVO.estDcdAmt1)){
+				$("#estDcdAmt1").setCurrFormatter($("#crncyCd1").val());
+				$("#crncyCd2").val($("#crncyCd1").val());
+			}
+			
+			/* ie 에서 태그에 disabled를 넣어두면 선택한 값이 표시되지 않는 버그 존재
+			 * 초기화 시 disabled를 직접 적용으로 버그 회피 */
+			$("#crncyCd2").prop("disabled", true ).selectric("refresh");
+			
+		});
+
+	};
+	
+	// 호출한 공통코드를 publishing 한다.
+	codeManager.publishCode(function(){
+
+		crncyCdStore.populateSelect($("[name='crncyCd1']"),{display:"CN", addFirst: GfnCode.optionChs("")}).val("KRW");
+		crncyCdStore.populateSelect($("[name='crncyCd2']"),{display:"CN", addFirst: GfnCode.optionSpc("")}).val("");
+
+		initPage();
+		
+	});
+	
+	$("#crncyCd1").change(function(e){
+		$("#estAmt1").setCurrFormatter($("#crncyCd1").val());
+	});
+	
+	//저장 버튼설정
+	$("#btnTempSave").click(function(){
+		fn_srpBlockPage();//화면잠금
+		$("#saveCls").val("T");		// 저장구분 - T:임시, S:제출
+		if(fn_valid()){
+			if(confirm(MsgManager.getMsg("WRN00113"))){
+				var extentdParam = {};
+				uploader.startUpload(function(){
+					extentdParam.attachInfo = uploader.getSaveData();
+					outpUploader.startUpload(function(){
+						extentdParam.outpAttachInfo = outpUploader.getSaveData();
+					
+						//등록일 경우 askStdFileId 복사
+						if("I" == $("#cls").val()){
+							extentdParam.stdFileId = $("#askStdFileId").val();
+						}
+						
+						processSheet.processSvc(function(data){
+							$("#estNo").val(data.estNo);
+							outpUploader.selectData(data.outpAttachInfo.attachFileMt.attachFileId, function(){
+								uploader.selectData(data.attachInfo.attachFileMt.attachFileId, function(){
+									// 임시저장시 화면을 재조회한다.
+									selectFull.searchSvc(function(data){
+										if(typeof opener.reload != "undefined"){
+											opener.reload();
+										}
+										if(typeof opener.srpCoopPrgStat != "undefined"){
+											opener.srpCoopPrgStat.LoadSearchData();
+										}
+										
+									});
+									
+									fn_srpUnblickPage();//화면잠금해제
+									Msgbar.showSaveOK();
+								});
+							});
+						}, extentdParam);
+						
+					});
+				});
+			} else {
+				fn_srpUnblickPage();//화면잠금해제
+			}
+		} else {
+			fn_srpUnblickPage();//화면잠금해제
+		}
+	});
+	
+	//견적제출 버튼설정
+	$("#btnSave").click(function(data){
+		fn_srpBlockPage();//화면잠금
+		$("#saveCls").val("S");		// 저장구분 - T:임시, S:제출
+		if(fn_valid()){
+			//MsgManager.alertMsg("INF04044"); //산출물내역서 첨부 후 견적을 제출해 주십시오.
+			if(confirm(MsgManager.getMsg("INF00174"))){
+				var extentdParam = {};
+				uploader.startUpload(function(){
+					extentdParam.attachInfo = uploader.getSaveData();
+					if(uploader.getFileList().length >= 1 && !fn_fileValid(extentdParam.attachInfo, "견적")){
+						// 파일 미첨부시
+						fn_srpUnblickPage();//화면잠금해제
+						return false;
+					}
+					outpUploader.startUpload(function(){
+						extentdParam.outpAttachInfo = outpUploader.getSaveData();
+						if(outpUploader.getFileList().length >= 1 && !fn_fileValid(extentdParam.outpAttachInfo, "산출물")){
+							// 파일 미첨부시
+							fn_srpUnblickPage();//화면잠금해제
+							return false;
+						}
+						processSheet.processSvc(function(){
+							if(typeof opener.selectSheet != "undefined"){
+								opener.selectSheet.searchSvc(function(){                                                                                                                                                                   
+									Msgbar.showSaveOK();
+								});
+							}
+							if(typeof opener.srpCoopPrgStat != "undefined"){
+								opener.srpCoopPrgStat.LoadSearchData();
+							}
+							window.close();	//닫기
+						}, extentdParam);
+						
+					});
+				});
+			} else {
+				fn_srpUnblickPage();//화면잠금해제
+			}
+				
+		} else {
+			fn_srpUnblickPage();//화면잠금해제
+		}		
+
+	});
+	
+	//닫기
+	$("#btnClose").click(function(){
+		if(typeof opener.selectSheet != "undefined"){
+			opener.selectSheet.searchSvc(function(){                                                                                                                                                                   
+				Msgbar.showSaveOK();
+			});
+		}
+		if(typeof opener.srpCoopPrgStat != "undefined"){
+			opener.srpCoopPrgStat.LoadSearchData();
+		}
+		window.close();	//닫기
+	});
+	
+	//최초등록, 임시저장, 반려 상태가 아닌 경우 버튼 비활성화
+	if(!(gfn_isEmpty(opener.rowData.estPrgStatCd) || opener.rowData.estPrgStatCd == "01" || opener.rowData.estPrgStatCd == "03")){
+		$("#btnTempSave, #btnSave").prop("disabled", true).addClass("btn-disable");
+		$("#estAmt1").prop("readonly", true).addClass("txt-ready");
+		$("#crncyCd1").prop("disabled", true ).selectric("refresh");
+		$("#btnTempSave, #btnSave").off();
+	}
+});
+		
+//서버로부터 Push된 메시지를 받아서 처리한다.
+GFN_PAGE_ENV.setError(function(errMsg, errType, ex){
+	fn_srpUnblickPage();//화면잠금해제
+	if(errType == "existSbmt"){
+		// 입력중간에 타 사용자에 의해서 이미 견적상태가 변경된경우
+		alert(errMsg);
+		if(typeof opener.selectSheet != "undefined"){
+			opener.selectSheet.searchSvc(function(){                                                                                                                                                                   
+				Msgbar.showSaveOK();
+			});
+		}
+		if(typeof opener.srpCoopPrgStat != "undefined"){
+			opener.srpCoopPrgStat.LoadSearchData();
+		}
+		window.close();	//닫기
+	}else{
+		alert(errMsg);
+	}
+});
+
+//부모창으로부터 넘어온 값 초기화
+function initParm(){
+	$("#jobNo").val(opener.rowData.jobNo);
+	$("#jobTpCd2").val(opener.rowData.jobTpCd2);
+	$("#estAskDt").val(opener.rowData.estAskDt);
+	$("#estOrdNo").val(opener.rowData.estOrdNo);
+	$("#estNo").val(opener.rowData.estNo);
+	$("#attachFileId").val(opener.rowData.attachFileId);
+	$("#cls").val(opener.cls);
+	
+	var estBusnScCd = " ";
+	if("ATL" == opener.rowData.estBusnScCd) estBusnScCd = "01";
+	else if("BTL" == opener.rowData.estBusnScCd) estBusnScCd = "02";
+	$("#estBusnScCd").val(estBusnScCd);
+	
+}
+
+function fn_valid(){
+	
+	var estAmt1 = $("#estAmt1").val().ex_replaceAll(",","").ex_replaceAll(".","");
+	
+	if(null == estAmt1 || gfn_isEmpty(estAmt1)){
+		alert(MsgManager.getMsg("ERR00114"));	//데이타를 입력해 주세요.
+		return false;
+		}
+	if(estAmt1 == 0){
+		alert(MsgManager.getMsg("WRN02115")); //견적금액이 0인 항목이 존재합니다.
+		return false;
+	}
+	
+	if($("#saveCls").val() == "S"){
+		// 견적제출인경우 - 파일첨부여부 검사 O
+		//1. 파일첨부 Validation - 모든 경우를 걸러내진 못함.
+		if(!uploader.hasUploadFile() && uploader.getFileList().length == 0){	 	
+			// 견적서가 존재하지 않습니다.
+			MsgManager.alertMsg("INF00702"); //첨부파일의 내역이 존재하지 않습니다. 견적서를 업로드하세요.
+			return false;
+		}
+		
+		if(!outpUploader.hasUploadFile() && outpUploader.getFileList().length == 0){	 	
+			// 산출물내역서가 존재하지 않습니다.
+			MsgManager.alertMsg("INF61237");
+			return false;
+		}
+	}
+	//2. 견적금액 Validation
+	if(!gfn_isEmpty($("#crncyCd1").val())){
+		if(estAmt1 <= 0){
+			//견적금액1 이 0이거나 0보다 작을경우
+			MsgManager.alertMsg("INF01541"); //입력금액은 0보다 커야 합니다.
+			$("#estAmt1").focus();
+			return false;
+		}else if(estAmt1 > 10000000000000){
+			alert(MsgManager.getMsg("WRN02702"));	// 견적금액은 10,000,000,000,000 을 넘을 수 없습니다.
+			$("#estAmt1").focus();
+			$("#estAmt1").val(0);
+			return false;
+		}
+	}
+	return true;
+}
+
+//첨부파일 추가 validation - 파일필수체크 (단, 업로드 액션이 이루어진 후 체크된다.)
+function fn_fileValid(attachInfo, type){
+	//기존에 파일이 첨부되있는 상태에서
+	var cnt = attachInfo.listAttachFileDt.length;
+	for(var i = 0 ; i < attachInfo.listAttachFileDt.length ; i++){
+		var status = attachInfo.listAttachFileDt[i].rowStatus;
+		if(status == "D"){
+			// 삭제
+			cnt--;
+		}
+	}
+	if(cnt <= 0){
+		if(type == "견적"){
+			MsgManager.alertMsg("INF00702");
+			return false;
+		} else{
+			MsgManager.alertMsg("INF61237");
+			return false;
+		}
+		
+	}
+	
+	return true;
+}
+</script>
+<h1 class="title">사전견적등록/수정</h1>
+<div class="s-tit-area clearfix">
+	<h4 class="s-title"><span cd="jobInfoNm">Job 정보</span></h4>
+</div>
+<form name="paramForm" id="paramForm">
+	<input type="hidden" name="jobNo" id="jobNo"  />
+	<input type="hidden" name="jobTpCd1" id="jobTpCd1" />
+	<input type="hidden" name="jobTpCd2" id="jobTpCd2" />
+	<input type="hidden" name="estAskDt" id="estAskDt" />
+	<input type="hidden" name="estOrdNo" id="estOrdNo"  />
+	<input type="hidden" name="estNo" id="estNo" />
+	<input type="hidden" name="attachFileId" id="attachFileId" />
+	<input type="hidden" name="estBusnScCd" id="estBusnScCd" />
+	<input type="hidden" name="saveCls" id="saveCls" />
+	<input type="hidden" name="excelCls" id="excelCls" value="N"/>
+	<input type="hidden" name="cls" id="cls" value="" />
+</form>
+<form name="mainForm" id="mainForm">
+<input type="hidden" name="jobNm" id="jobNm"  />
+<input type="hidden" name="matNm" id="matNm"  />
+<input type="hidden" name="cltNm" id="cltNm"  />
+<table class="tbl-type03">
+	<colgroup>
+		<col style="width:13.8%;">
+		<col style="width:19.53%;">
+		<col style="width:13.8%;">
+		<col style="width:19.53%;">
+		<col style="width:13.8%;">
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row"><span cd="job">Job</span></th>
+			<td></td>
+			<th scope="row"><span cd="matNm">Job Type</span></th>
+			<td></td>
+			<th scope="row"><span cd="clt">광고주</span></th>
+			<td></td>
+		</tr>
+		<tr>
+			<th scope="row"><span cd="adjMainEmpNm">정산담당자</span></th>
+			<td></td>
+			<th scope="row"><span cd="pdnTeam">제작팀</span></th>
+			<td></td>
+			<th scope="row"><span cd="pdnMainr">제작담당자</span></th>
+			<td></td>
+		</tr>
+	</tbody>
+</table>
+</form>
+<div class="s-tit-area clearfix">
+	<h4 class="s-title"><span cd="prpslEstInfo">사전견적정보</span></h4>
+</div>
+<form id="prpslEstForm" name="prpslEstForm">
+<input type="hidden" id="saveCls" name="saveCls" />
+<input type="hidden" id="estOrdNo" name="estOrdNo" />
+<input type="hidden" id="estAskDt" name="estAskDt" />
+<input type="hidden" id="estNo" name="estNo" />
+<input type="hidden" id="attachFileId" name="attachFileId" />
+<input type="hidden" id="outpAttachFileId" name="outpAttachFileId" />
+<input type="hidden" id="attachFileSize" name="attachFileSize" />
+<input type="hidden" id="stdFileId" name="stdFileId" title="견적서 첨부파일" />
+<input type="hidden" id="askStdFileId" name="askStdFileId" title="견적의뢰 첨부파일" />
+<table class="tbl-type03">
+	<colgroup>
+		<col style="width:13.8%;">
+		<col>
+	</colgroup>
+	<tbody>
+		<tr>
+			<th scope="row"><span cd="estNo">견적번호</span></th>
+			<td>
+				<div class="input-area">
+					<div class="col-100"><input type="text" class="txt-ready" id="estNo" name="estNo" readonly="readonly"></div>
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<div class="tbl-type02 mgT20">
+	<table>
+		<colgroup>
+			<col style="width:16.66%;">
+			<col style="width:16.66%;">
+			<col style="width:16.66%;">
+			<col style="width:16.66%;">
+			<col style="width:16.66%;">
+			<col>
+		</colgroup>
+		<thead>
+			<tr>
+				<th scope="col" colspan="3" class="bb-c"><span cd="prpslEst">사전견적</span></th>
+				<th scope="col" colspan="3" class="bb-c"><span cd="prpslEstDcd">사전견적확정</span></th>
+			</tr>
+			<tr>
+				<th scope="col"><span cd="estAmt">견적금액</span></th>
+				<th scope="col"><span cd="curr">통화</span></th>
+				<th scope="col"><span cd="estSbmtDt">제출일자</span></th>
+				<th scope="col"><span cd="estDcdAmt">확정금액</span></th>
+				<th scope="col"><span cd="curr">통화</span></th>
+				<th scope="col"><span cd="confirmDate">확정일자</span></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>
+					<div class="input-area">
+						<div class="col-100">
+							<input type="text" class="ar" id="estAmt1" name="estAmt1" format="decimal" valid="required">
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="input-area">
+						<div class="col-100">
+							<select id="crncyCd1" name="crncyCd1" valid="required" class="basic"></select>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="input-area">
+						<div class="col-100"><input type="text" id="estSbmtDt" name="estSbmtDt" format="date" class="txt-ready" readonly="readonly"></div>
+					</div>
+				</td>
+				<td>
+					<div class="input-area">
+						<div class="col-100"><input type="text" id="estDcdAmt1" name="estDcdAmt1" format="decimal" class="txt-ready" readonly="readonly"></div>
+					</div>
+				</td>
+				<td>
+					<div class="input-area">
+						<div class="col-100">
+							<select id="crncyCd2" name="crncyCd2" class="basic"></select>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="input-area">
+						<div class="col-100"><input type="text" id="enpTrnsDt" name="enpTrnsDt" format="date" class="txt-ready" readonly="readonly"></div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</form>
+<div class="col2">
+	<div class="pdL0 lh1">
+		<h4 class="s-title mgT0"><span cd="attachFileDown">전달 산출물내역서 확인</span></h4>
+		<div id="downloader">첨부파일 영역</div>
+	</div>
+</div>
+<div class="col2">
+	<div class="pdR15 lh1">
+		<h4 class="s-title mgT0"><span cd="attachEstPaper">견적서 첨부</span></h4>
+		<div id="uploader">첨부파일 영역</div>
+	</div>
+	<div class="pdL0 lh1">
+		<h4 class="s-title mgT0"><span cd="estAttachFile2">산출물내역서 첨부</span></h4>
+		<div id="outpUploader">첨부파일 영역</div>
+	</div>
+</div>
+<div class="btn-area btm-btn fix-scroll">
+	<button type="button" class="btn-type05" id="btnTempSave"><span cd="save">저장</span></button>
+	<button type="button" class="btn-type05 ty01" id="btnSave"><span cd="estSbmt">견적제출</span></button>
+</div>
+<a href="javascript:void(0);" class="btn-close-popup" id="btnClose">닫기</a>
+	</div>
+</body>
+</html>
