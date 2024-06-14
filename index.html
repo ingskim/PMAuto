@@ -3,12 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>견적등록/수정</title>
+    <title>견적등록/수정 팝업</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
             background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .popup-container {
+            width: 80%;
+            height: 80%;
+            margin: 5% auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow-y: auto;
         }
         h1 {
             color: #333;
@@ -40,8 +52,14 @@
             display: flex;
             align-items: center;
         }
-        .subsection-title img {
+        .subsection-title .plus-icon {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ddd;
+            text-align: center;
             margin-right: 10px;
+            line-height: 20px;
         }
         table {
             width: 100%;
@@ -74,165 +92,157 @@
 </head>
 <body>
 
-    <h1>견적등록/수정</h1>
-    
-    <div class="section">
-        <div class="section-title">Job 정보</div>
-        <table>
-            <tr>
-                <td class="blue-background">Job</td>
-                <td>KRP24999001 -2024 PM업무자동화 T/F 캠페인</td>
-                <td class="blue-background">Job Type</td>
-                <td>Audio & Video/ AV Production Others</td>
-                <td class="blue-background">광고주</td>
-                <td>제일기획</td>
-            </tr>
-            <tr>
-                <td class="blue-background">담당PM</td>
-                <td>고병택</td>
-                <td class="blue-background">제작팀</td>
-                <td>PM 혁신팀</td>
-                <td class="blue-background">제작담당자</td>
-                <td>정은이</td>
-            </tr>
-        </table>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">견적의뢰정보</div>
-        <table>
-            <tr>
-                <td class="blue-background">견적의뢰번호</td>
-                <td>KRFO2403046</td>
-            </tr>
-        </table>
-    </div>
-    
-    <div class="section">
-        <div class="section-title">견적 등록부문</div>
+    <div class="popup-container">
+        <h1>견적등록/수정</h1>
         
-        <div class="subsection-title">
-            <img src="/mnt/data/plus.jpg" alt="+" width="20" height="20">
-            CF프로덕션
+        <div class="section">
+            <div class="section-title">Job 정보</div>
+            <table>
+                <tr>
+                    <td class="blue-background">Job</td>
+                    <td>KRP24999001 -2024 PM업무자동화 T/F 캠페인</td>
+                    <td class="blue-background">Job Type</td>
+                    <td>Audio & Video/ AV Production Others</td>
+                    <td class="blue-background">광고주</td>
+                    <td>제일기획</td>
+                </tr>
+                <tr>
+                    <td class="blue-background">담당PM</td>
+                    <td>고병택</td>
+                    <td class="blue-background">제작팀</td>
+                    <td>PM 혁신팀</td>
+                    <td class="blue-background">제작담당자</td>
+                    <td>정은이</td>
+                </tr>
+            </table>
         </div>
-        <div class="controls">
-            <label><input type="checkbox"> 전체선택</label>
-            <label><input type="checkbox"> 삭제</label>
-            <label><input type="checkbox"> 복사</label>
-            <label><input type="checkbox"> 추가</label>
+        
+        <div class="section">
+            <div class="section-title">견적의뢰정보</div>
+            <table>
+                <tr>
+                    <td class="blue-background">견적의뢰번호</td>
+                    <td>KRFO2403046</td>
+                </tr>
+            </table>
         </div>
-        <table>
-            <tr>
-                <th class="checkbox-cell"><input type="checkbox"></th>
-                <th>구분</th>
-                <th>항목</th>
-                <th>수량1</th>
-                <th>단위1</th>
-                <th>수량2</th>
-                <th>단위2</th>
-                <th>거래가격</th>
-                <th>비고</th>
-                <th>해당 산출물</th>
-            </tr>
-            <tr>
-                <td class="checkbox-cell"><input type="checkbox"></td>
-                <td>1. 기획</td>
-                <td>기획구성료</td>
-                <td>1</td>
-                <td>프로젝트</td>
-                <td></td>
-                <td></td>
-                <td>₩5,000,000</td>
-                <td></td>
-                <td>영상 기획안</td>
-            </tr>
-            <tr>
-                <td class="checkbox-cell"><input type="checkbox"></td>
-                <td>2. 프로듀싱</td>
-                <td>E.PD료</td>
-                <td>1</td>
-                <td>편</td>
-                <td>2</td>
-                <td>일</td>
-                <td>₩8,000,000</td>
-                <td></td>
-                <td>영상 소재파일 등</td>
-            </tr>
-            <tr>
-                <td class="checkbox-cell"><input type="checkbox"></td>
-                <td>2. 프로듀싱</td>
-                <td>L.PD료</td>
-                <td>1</td>
-                <td>편</td>
-                <td>2</td>
-                <td>일</td>
-                <td>₩3,000,000</td>
-                <td></td>
-                <td>영상 소재파일 등</td>
-            </tr>
-        </table>
+        
+        <div class="section">
+            <div class="section-title">견적 등록부문</div>
+            
+            <div class="subsection-title">
+                <div class="plus-icon">+</div>
+                CF프로덕션
+            </div>
+            <div class="controls">
+                <label><input type="checkbox"> 전체선택</label>
+                <label><input type="checkbox"> 삭제</label>
+                <label><input type="checkbox"> 복사</label>
+                <label><input type="checkbox"> 추가</label>
+            </div>
+            <table>
+                <tr>
+                    <th class="checkbox-cell"><input type="checkbox"></th>
+                    <th>구분</th>
+                    <th>항목</th>
+                    <th>수량1</th>
+                    <th>단위1</th>
+                    <th>수량2</th>
+                    <th>단위2</th>
+                    <th>거래가격</th>
+                    <th>비고</th>
+                    <th>해당 산출물</th>
+                </tr>
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>1. 기획</td>
+                    <td>기획구성료</td>
+                    <td>1</td>
+                    <td>프로젝트</td>
+                    <td></td>
+                    <td></td>
+                    <td>₩5,000,000</td>
+                    <td></td>
+                    <td>영상 기획안</td>
+                </tr>
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>2. 프로듀싱</td>
+                    <td>E.PD료</td>
+                    <td>1</td>
+                    <td>편</td>
+                    <td>2</td>
+                    <td>일</td>
+                    <td>₩8,000,000</td>
+                    <td></td>
+                    <td>영상 소재파일 등</td>
+                </tr>
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>2. 프로듀싱</td>
+                    <td>L.PD료</td>
+                    <td>1</td>
+                    <td>편</td>
+                    <td>2</td>
+                    <td>일</td>
+                    <td>₩3,000,000</td>
+                    <td></td>
+                    <td>영상 소재파일 등</td>
+                </tr>
+            </table>
 
-        <div class="subsection-title">
-            <img src="/mnt/data/plus.jpg" alt="+" width="20" height="20">
-            포스트프로덕션
-        </div>
-        <div class="controls">
-            <label><input type="checkbox"> 전체선택</label>
-            <label><input type="checkbox"> 삭제</label>
-            <label><input type="checkbox"> 복사</label>
-            <label><input type="checkbox"> 추가</label>
-        </div>
-        <table>
-            <tr>
-                <th class="checkbox-cell"><input type="checkbox"></th>
-                <th>구분</th>
-                <th>항목</th>
-                <th>수량1</th>
-                <th>단위1</th>
-                <th>수량2</th>
-                <th>단위2</th>
-                <th>거래가격</th>
-                <th>비고</th>
-                <th>해당 산출물</th>
-            </tr>
-            <tr>
-                <td class="checkbox-cell"><input type="checkbox"></td>
-                <td>1. 편집</td>
-                <td>Editing</td>
-                <td>1</td>
-                <td>편</td>
-                <td>15, 30</td>
-                <td>초</td>
-                <td>₩5,500,000</td>
-                <td></td>
-                <td>편집본</td>
-            </tr>
-            <tr>
-                <td class="checkbox-cell"><input type="checkbox"></td>
-                <td>2. 합성</td>
-                <td>2D</td>
-                <td>4</td>
-                <td>Time</td>
-                <td>15, 30</td>
-                <td>초</td>
-                <td>₩20,000,000</td>
-                <td>본편, 수정 등 포함</td>
-                <td>영상 데이터</td>
-            </tr>
-            <tr>
-                <td class="checkbox-cell"><input type="checkbox"></td>
-                <td>2. 합성</td>
-                <td>3D</td>
-                <td>4</td>
-                <td>Time</td>
-                <td>15, 30</td>
-                <td>초</td>
-                <td>₩20,000,000</td>
-                <td>모델링 등</td>
-                <td>영상 데이터</td>
-            </tr>
-        </table>
-    </div>
-
-</body>
-</html>
+            <div class="subsection-title">
+                <div class="plus-icon">+</div>
+                포스트프로덕션
+            </div>
+            <div class="controls">
+                <label><input type="checkbox"> 전체선택</label>
+                <label><input type="checkbox"> 삭제</label>
+                <label><input type="checkbox"> 복사</label>
+                <label><input type="checkbox"> 추가</label>
+            </div>
+            <table>
+                <tr>
+                    <th class="checkbox-cell"><input type="checkbox"></th>
+                    <th>구분</th>
+                    <th>항목</th>
+                    <th>수량1</th>
+                    <th>단위1</th>
+                    <th>수량2</th>
+                    <th>단위2</th>
+                    <th>거래가격</th>
+                    <th>비고</th>
+                    <th>해당 산출물</th>
+                </tr>
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>1. 편집</td>
+                    <td>Editing</td>
+                    <td>1</td>
+                    <td>편</td>
+                    <td>15, 30</td>
+                    <td>초</td>
+                    <td>₩5,500,000</td>
+                    <td></td>
+                    <td>편집본</td>
+                </tr>
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>2. 합성</td>
+                    <td>2D</td>
+                    <td>4</td>
+                    <td>Time</td>
+                    <td>15, 30</td>
+                    <td>초</td>
+                    <td>₩20,000,000</td>
+                    <td>본편, 수정 등 포함</td>
+                    <td>영상 데이터</td>
+                </tr>
+                <tr>
+                    <td class="checkbox-cell"><input type="checkbox"></td>
+                    <td>2. 합성</td>
+                    <td>3D</td>
+                    <td>4</td>
+                    <td>Time</td>
+                    <td>15, 30</td>
+                    <td>초</td>
